@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import './utils/main.css';
 import Header from './Header';
-import Home, { cardContent } from './pages/Home';
+import Home, { cardContentWithIds } from './pages/Home';
 import Footer from './Footer';
 import fangsReview from './utils/images/fangsReview.jpg';
 
 export default function BlogContainer() {
 
-    const [filteredContent, setFilteredContent] = useState(cardContent);
+    const [filteredContent, setFilteredContent] = useState(cardContentWithIds);
 
     const handleSearch = (searchQuery) => {
 
-        const filteredResults = cardContent.filter((card) => {
+        const filteredResults = cardContentWithIds.filter((card) => {
             // Implement search logic here
             return (
                 card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import Post from './Post';
 import '../utils/main.css';
+import { v4 as uuidv4 } from 'uuid';
 
 import mrsleifSinopsis from '../utils/images/mrsleifSinopsis.jpg';
 import mrsleifReview from '../utils/images/mrsleifReview.jpg';
@@ -1592,7 +1593,7 @@ const cardContent = [
 
 // Define a function to generate unique IDs
 function generateUniqueId() {
-  return Math.random().toString(36).substr(2, 9); // Random alphanumeric string
+  return uuidv4();
 }
 
 // Add unique IDs to each card object
@@ -1680,4 +1681,4 @@ export default function Home({ cardContent = cardContentWithIds }) {
   );
 }
 
-export { cardContent };
+export { cardContentWithIds };
