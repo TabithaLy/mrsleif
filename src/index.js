@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { act } from 'react';
 import ReactDOM from 'react-dom';
-import { act } from 'react-dom/test-utils'; // Import act from react-dom/test-utils
+// import { act } from 'react-dom/test-utils';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
