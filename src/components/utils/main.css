@@ -1,0 +1,260 @@
+.card-body {
+    margin: auto;
+    width: 50%;
+    border: 3px solid peachpuff;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: #570e2c;
+}
+
+h2,
+h3 {
+    color: #570e2c;
+}
+
+.hero {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url("./images/blogHero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.button {
+    cursor: grab;
+}
+
+.card-image {
+    width: 200px;
+    height: 300px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 0px;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    /* Ensure cards wrap correctly */
+    flex-wrap: wrap;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0;
+}
+
+.card-grid {
+    display: grid;
+    /* Ensure 4 cards per row */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    /* Center the grid content */
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 900px;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.expanded-card-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+.expanded-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 800px;
+    height: 70%;
+    max-height: 600px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.expanded-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.exit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.badges-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.badge {
+    width: 100px;
+    height: 100px;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-bar {
+    border: 2px solid #570e2c;
+    border-radius: 20px 0 0 20px;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+}
+
+.search-bar:focus {
+    border-color: blue;
+}
+
+.search-button {
+    background-color: #570e2c;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #570e2c;
+}
+
+.footer {
+    background-color: #570e2c;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+}
+
+.home-container {
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 40px;
+    padding: 0px 20px 20px;
+}
+
+/* Adjustments for the grid container */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-container h1 {
+    cursor: pointer;
+    user-select: none;
+}
+
+.purchase-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.purchase-link {
+    text-decoration: none;
+    color: #570e2c;
+    padding: 5px 10px;
+    border: 1px solid #570e2c;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.purchase-link:hover {
+    background-color: #570e2c;
+    color: white;
+}
+
+/* Styles for the left image */
+.left-image {
+    /* Position the image relative to the viewport */
+    position: fixed;
+    left: 50px;
+    /* Place the image at the vertical midpoint */
+    top: 50%;
+    /* Ensure the image appears above other content */
+    z-index: 999;
+    width: 200px;
+    height: 300px;
+}
+
+.link-container {
+    background-color: #ffe2e6;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.link-container a {
+    color: blue;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.link-container a:hover {
+    text-decoration: underline;
+}
+
+.year-container h1,
+.month-container h2 {
+    cursor: pointer;
+    user-select: none;
+}
+
+.year-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.month-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.whole-page {
+    background-color: #ffe2e6;
+}
