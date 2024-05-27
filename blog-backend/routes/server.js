@@ -1,46 +1,32 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+const postRoutes = require('./postRoutes');
+const authRoutes = require('./authRoutes');
+
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
+app.use(cors()); 
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mrsleif2fangsDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+// Define a route for the root URL
+app.get('/', (req, res) => {
+  res.send('Welcome to the blog backend!');
 });
 
-const db = mongoose.connection;
-db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Connected to Database'));
+// Routes
+app.use('/api/posts', postRoutes);
+app.use('/api/auth', authRoutes);
 
-// Define the schema for your collection
-const postSchema = new mongoose.Schema({
-  // Define the schema fields here
-  title: String,
-  author: String,
-  publisher: String,
-  fangs: String
-});
-
-// Define the model using the schema
-const Post = mongoose.model('Post', postSchema);
-
-// Routes for posts
-app.get('/posts', async (req, res) => {
-  try {
-    const posts = await Post.find();
-    res.json(posts);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-// Add more routes as needed
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// MongoDB connection
+mongoose.connect('mongodb://127.0.0.1:27017/mrsleif2fangsDB')
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  }).catch(err => {
+    console.error('Connection error', err);
+  });

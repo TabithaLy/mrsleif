@@ -258,3 +258,66 @@ h3 {
 .whole-page {
     background-color: #ffe2e6;
 }
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.auth-buttons .button {
+    margin: 0 10px;
+    /* Adjust the margin to control the space between buttons */
+}
+
+.form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 4px solid #570e2c;
+    background-color: #ffe2e6;
+}
+
+.input-field {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #570e2c;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #570e2c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-button, .logout-button, .create-post-button {
+    text-decoration: none;
+    background-color: #ffe2e6;
+    color: #570e2c;
+    padding: 5px 10px;
+    border: 1px solid #570e2c;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.auth-button:hover, .logout-button:hover, .create-post-button:hover {
+    background-color: #570e2c;
+    color: white;
+}
+
+/* .logout-button:hover {
+    background-color: white;
+    color: #570e2c;
+} */
+
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+}

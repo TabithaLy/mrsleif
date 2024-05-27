@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
-// Define the schema for the Post collection
 const postSchema = new mongoose.Schema({
+    image: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String,
         required: true,
@@ -14,9 +17,17 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    imageS: {
+        type: String,
+        default: '..blog-frontend/src/components/utils/images/mrslefSinopsis.jpg', // Replace with actual path
+    },
     sinopsis: {
         type: String,
         required: true,
+    },
+    imageR: {
+        type: String,
+        default: '..blog-frontend/src/components/utils/images/mrslefReview.jpg', // Replace with actual path
     },
     review: {
         type: String,
@@ -32,17 +43,15 @@ const postSchema = new mongoose.Schema({
     },
     amazonLink: {
         type: String,
-        required: true,
     },
     barnesNobleLink: {
         type: String,
-        required: true,
     },
     date: {
         type: Date,
         default: Date.now,
     },
-});
+}, { collection: 'mrsleifPosts' });
 
 // Create the model for the Post collection
 const Post = mongoose.model('Post', postSchema);

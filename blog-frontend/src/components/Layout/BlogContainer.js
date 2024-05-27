@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './utils/main.css';
+import '../utils/main.css';
 import Header from './Header';
-import Home, { cardContentWithIds } from './pages/Home';
+import Home, { cardContentWithIds } from '../pages/Home';
 import Footer from './Footer';
-import fangsReview from './utils/images/fangsReview.jpg';
+import fangsReview from '../utils/images/fangsReview.jpg';
 
-export default function BlogContainer() {
+export default function BlogContainer({ isLoggedIn, onLogout }) {
 
     const [filteredContent, setFilteredContent] = useState(cardContentWithIds);
 
@@ -28,7 +28,8 @@ export default function BlogContainer() {
         <div>
             {/* Main content */}
             <div className="whole-page">
-                <Header handleSearch={handleSearch} />
+                <Header handleSearch={handleSearch} isLoggedIn={isLoggedIn} onLogout={onLogout} />
+                {/* <Link to="/create-post" className="create-post-link">Create Post</Link> */}
                 <Home cardContent={filteredContent} />
                 <div className="link-container">
                     <a href="https://www.mrsleifs.com/2022/" target="_blank" rel="noopener noreferrer">
